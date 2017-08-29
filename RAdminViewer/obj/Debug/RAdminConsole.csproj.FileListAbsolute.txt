@@ -1,0 +1,8 @@
+D:\VisualStudioProject\Projects\RemoteAdmin\RAdminConsole\bin\Debug\RAdminConsole.exe
+D:\VisualStudioProject\Projects\RemoteAdmin\RAdminConsole\bin\Debug\RAdminConsole.pdb
+D:\VisualStudioProject\Projects\RemoteAdmin\RAdminConsole\obj\Debug\RAdminConsole.Form1.resources
+D:\VisualStudioProject\Projects\RemoteAdmin\RAdminConsole\obj\Debug\RAdminConsole.Properties.Resources.resources
+D:\VisualStudioProject\Projects\RemoteAdmin\RAdminConsole\obj\Debug\RAdminConsole.csproj.GenerateResource.Cache
+D:\VisualStudioProject\Projects\RemoteAdmin\RAdminConsole\obj\Debug\RAdminConsole.exe
+D:\VisualStudioProject\Projects\RemoteAdmin\RAdminConsole\obj\Debug\RAdminConsole.pdb
+D:\VisualStudioProject\Projects\RemoteAdmin\RAdminConsole\obj\Debug\RAdminConsole.csprojResolveAssemblyReference.cache

@@ -1,0 +1,9 @@
+D:\VisualStudioProject\Projects\RemoteAdmin\TestHosting\bin\Debug\TestHosting.exe
+D:\VisualStudioProject\Projects\RemoteAdmin\TestHosting\bin\Debug\TestHosting.pdb
+D:\VisualStudioProject\Projects\RemoteAdmin\TestHosting\bin\Debug\Model.dll
+D:\VisualStudioProject\Projects\RemoteAdmin\TestHosting\bin\Debug\Common.dll
+D:\VisualStudioProject\Projects\RemoteAdmin\TestHosting\bin\Debug\Model.pdb
+D:\VisualStudioProject\Projects\RemoteAdmin\TestHosting\bin\Debug\Common.pdb
+D:\VisualStudioProject\Projects\RemoteAdmin\TestHosting\obj\Debug\TestHosting.csprojResolveAssemblyReference.cache
+D:\VisualStudioProject\Projects\RemoteAdmin\TestHosting\obj\Debug\TestHosting.exe
+D:\VisualStudioProject\Projects\RemoteAdmin\TestHosting\obj\Debug\TestHosting.pdb
