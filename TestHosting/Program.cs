@@ -11,11 +11,11 @@ namespace TestHosting
         static void Main(string[] args)
         {
             ClientChannel client = new ClientChannel();
-            client.StartListen("9123");
+            client.OpenListening("");
             Console.WriteLine("start...");
-
+            
             Console.ReadLine();
-            client.StopListen();
+            client.CloseListening();
         }
     }
 }

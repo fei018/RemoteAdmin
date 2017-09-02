@@ -7,7 +7,9 @@ namespace Common
 { 
     public interface IFunctions
     {
-        event EventForwardDelegate CmdEventForward;
+        event RAEventForwardDelegate CmdEventForward;
+
+        bool PasswordCheck(string password);
         string RunCmd(string command);
         void RunBatch(string batPath);
     }

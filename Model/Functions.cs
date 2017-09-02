@@ -9,7 +9,12 @@ namespace Model
 {
     public class Functions:MarshalByRefObject,IFunctions
     {
-        public event EventForwardDelegate CmdEventForward;
+        public event RAEventForwardDelegate CmdEventForward;
+
+        public bool PasswordCheck(string password)
+        {
+            return false;
+        }
 
         public string RunCmd(string command)
         {

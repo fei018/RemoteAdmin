@@ -45,7 +45,7 @@ namespace RAdminViewer
             }
         }
 
-        public void StartListen(string port)
+        public void OpenListening(string port)
         {
             if (port == null)
             {
@@ -67,7 +67,7 @@ namespace RAdminViewer
             }
         }
 
-        public void StopListen()
+        public void CloseListening()
         {
             this.UnregisterChannel();
         }

@@ -24,14 +24,14 @@ namespace RAdminViewer
         private void OpenChannel()
         {
             _channel = new ViewerChannel();
-            _channel.StartListen("9124");
+            _channel.OpenListening("9124");
         }
 
         private void CloseChannel()
         {
             if (_channel != null)
             {
-                _channel.StopListen();
+                _channel.CloseListening();
             }
         }
         #endregion

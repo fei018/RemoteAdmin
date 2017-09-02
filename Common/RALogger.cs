@@ -5,7 +5,7 @@ using System.Text;
 
 namespace Common
 {
-    public class Logger
+    public class RALogger
     {
         public static object Locker1 = new object();
 

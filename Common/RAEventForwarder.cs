@@ -5,11 +5,11 @@ using System.Text;
 
 namespace Common
 {
-    public delegate void EventForwardDelegate(object sender,string e);
+    public delegate void RAEventForwardDelegate(object sender,string e);
 
-    public class EventForwarder:MarshalByRefObject
+    public class RAEventForwarder:MarshalByRefObject
     {
-        public event EventForwardDelegate CmdEvent;
+        public event RAEventForwardDelegate CmdEvent;
 
         public void CallCmdEvent(object sender, string e)
         {

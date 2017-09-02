@@ -7,12 +7,15 @@ using System.Runtime.Remoting.Channels.Tcp;
 using System.Runtime.Remoting.Channels;
 using System.Collections;
 using Common;
+using System.Xml;
 
 namespace Model
 {
     public class ClientChannel
     {
         private string _port;
+
+        private string _configPath;
 
         private void RegisterChannel()
         {
@@ -26,7 +29,7 @@ namespace Model
             {
                 TcpChannel channel = new TcpChannel(prop, clientProvider, serverProvider);
                 ChannelServices.RegisterChannel(channel, false);
-                Logger.Log("Register Channel: " + _port + " port.");
+                RALogger.Log("Register Channel: " + _port + " port.");
             }
             catch (Exception) 
             {
@@ -40,7 +43,7 @@ namespace Model
             if (channel != null)
             {
                 ChannelServices.UnregisterChannel(channel);
-                Logger.Log("Unregister Channel: " + _port + " port.");
+                RALogger.Log("Unregister Channel: " + _port + " port.");
             }
         }
 
@@ -56,29 +59,47 @@ namespace Model
             }
         }
 
-        public void StartListen(string port)
+        private void SetPort()
         {
-            if (port == null)
-            {
-                Logger.Error("Null Port.");
-                return;
-            }
-
-            this._port = port;
-
+            XmlDocument xml = new XmlDocument();
             try
             {
+                xml.Load(this._configPath);
+                XmlNodeList nodes = xml.GetElementsByTagName("port");
+                string p = nodes[0].Attributes[0].Value;
+                if (!RASecurity.IsChannelPort(p))
+                {
+                    throw new ArgumentException("Invalid Channel Port.");
+                }
+                this._port = p;
+            }
+            catch (Exception)
+            {
+                throw;
+            }
+        }
+
+        public void OpenListening(string configPath)
+        {       
+            try
+            {
+                if (configPath == null)
+                {
+                    RALogger.Error("Null ConfigFile Path.");
+                    return;
+                }
+                this._configPath = configPath;
+                this.SetPort();
                 this.RegisterChannel();
                 this.RegisterFunctions();
             }
             catch (Exception ex)
             {
-                Logger.Error(ex.Message);
-
+                RALogger.Error(ex.Message);
             }
         }
 
-        public void StopListen()
+        public void CloseListening()
         {
             this.UnregisterChannel();
         }
