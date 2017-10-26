@@ -47,8 +47,8 @@ namespace Common
         #endregion
 
         #region Regex Match
-        private const string RegexChannelPort = @"^[0-65535]$";
-        private const string RegexIPAddress = @"^((2[0-4]\d|25[0-5]|[01]?\d\d?)\.){3}(2[0-4]\d|25[0-5]|[01]?\d\d?)$";
+        private const string RegexChannelPort = @"^[0-9]|[1-9]\d{1,3}|[1-5]\d\d\d\d|[6][0-5][0-5][0-3][0-5]$"; //0 - 65535
+        private const string RegexIPAddress = @"^((2[0-4]\d|25[0-5]|[01]?\d\d?)\.){3}(2[0-4]\d|25[0-5]|[01]?\d\d?)$"; //0.0.0.0 - 255.255.255.255
 
         public static bool IsChannelPort(string port)
         {

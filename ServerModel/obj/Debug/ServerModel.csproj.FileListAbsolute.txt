@@ -1,0 +1,4 @@
+D:\VisualStudioProject\Projects\RemoteAdmin\ServerModel\bin\Debug\ServerModel.dll
+D:\VisualStudioProject\Projects\RemoteAdmin\ServerModel\bin\Debug\ServerModel.pdb
+D:\VisualStudioProject\Projects\RemoteAdmin\ServerModel\obj\Debug\ServerModel.dll
+D:\VisualStudioProject\Projects\RemoteAdmin\ServerModel\obj\Debug\ServerModel.pdb

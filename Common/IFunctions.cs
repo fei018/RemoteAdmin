@@ -9,8 +9,16 @@ namespace Common
     {
         event RAEventForwardDelegate CmdEventForward;
 
+        //check connection password
         bool PasswordCheck(string password);
-        string RunCmd(string command);
+
+        //Run a command from cmd.exe
+        string RunCommand(string command);
+
+        //Run a batch file remotely
         void RunBatch(string batPath);
+
+        //Send host info to Server
+        HostInfo GetHostInfo();
     }
 }

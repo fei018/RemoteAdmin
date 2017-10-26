@@ -1,0 +1,8 @@
+D:\VisualStudioProject\Projects\RemoteAdmin\TestServer\bin\Debug\TestServer.exe
+D:\VisualStudioProject\Projects\RemoteAdmin\TestServer\bin\Debug\TestServer.pdb
+D:\VisualStudioProject\Projects\RemoteAdmin\TestServer\obj\Debug\TestServer.exe
+D:\VisualStudioProject\Projects\RemoteAdmin\TestServer\obj\Debug\TestServer.pdb
+D:\VisualStudioProject\Projects\RemoteAdmin\TestServer\obj\Debug\TestServer.csprojResolveAssemblyReference.cache
+D:\VisualStudioProject\Projects\RemoteAdmin\TestServer\bin\Debug\Common.dll
+D:\VisualStudioProject\Projects\RemoteAdmin\TestServer\bin\Debug\Common.pdb
+D:\VisualStudioProject\Projects\RemoteAdmin\TestServer\bin\Debug\server.config
