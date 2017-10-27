@@ -7,7 +7,7 @@ using Common;
 
 namespace AppModel
 {
-    public class Cmd
+    public class AppCmd
     {
         private Process _process;
         private ProcessStartInfo _startInfo;
@@ -15,7 +15,7 @@ namespace AppModel
         //public event EventForwardDelegate OutputEvent;
 
         /// <summary>
-        /// Run a cmd command
+        /// Run a cmd.exe command
         /// </summary>
         /// <param name="command"></param>
         /// <returns></returns>
@@ -30,27 +30,29 @@ namespace AppModel
                 _startInfo.RedirectStandardOutput = true;
                 _startInfo.UseShellExecute = false;
                 _startInfo.CreateNoWindow = true;
-
                 _process.StartInfo = _startInfo;
-                _process.Start();
-                _process.StandardInput.WriteLine(command);
-                _process.StandardInput.Flush();
 
-                string output = _process.StandardOutput.ReadToEnd();
-                string error = _process.StandardError.ReadToEnd();
-                //if (OutputEvent != null)
-                //{
-                //    if (output != null) OutputEvent(null, output);
+                try
+                {
+                    _process.Start();
+                    _process.StandardInput.WriteLine(command);
+                    _process.StandardInput.Flush();
 
-                //    if (error != null) OutputEvent(null, error);
-                //}
-                string result = null;
-                if (output != null) result = output;
+                    string output = _process.StandardOutput.ReadToEnd();
+                    string error = _process.StandardError.ReadToEnd();
+                    string result = null;
+                    if (output != null) result = output;
 
-                if (error != null) result = error;
+                    if (error != null) result = error;
 
-                _process.WaitForExit();
-                return result;
+                    _process.WaitForExit();
+                    return result;
+                }
+                catch (Exception ex)
+                {
+                    RALogger.Log(ex.Message);
+                    return ex.Message;
+                }
             }
         }
 

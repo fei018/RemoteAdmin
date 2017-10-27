@@ -44,10 +44,11 @@
   </ItemGroup>
   <ItemGroup>
     <Compile Include="AppConfig.cs" />
-    <Compile Include="ClientChannel.cs" />
-    <Compile Include="Cmd.cs" />
-    <Compile Include="Functions.cs" />
+    <Compile Include="AppChannel.cs" />
+    <Compile Include="AppCmd.cs" />
+    <Compile Include="AppFunctions.cs" />
     <Compile Include="LocalHost.cs" />
+    <Compile Include="AppPasswd.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />

@@ -23,6 +23,11 @@ namespace Common
 
         public string SendTime { get; set; }
 
+        /// <summary>
+        /// Get IP Address v4
+        /// </summary>
+        /// <returns></returns>
+        /// <exception cref="throw"></exception>
         private string GetIPAddress()
         {
             try

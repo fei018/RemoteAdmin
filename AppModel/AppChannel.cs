@@ -11,15 +11,16 @@ using System.Xml;
 
 namespace AppModel
 {
-    public class ClientChannel
+    public delegate void AppExceptionDeleg(object sender, string e);
+
+    public class AppChannel
     {
         private string _port;
-
-        private string _configPath;
 
         /// <summary>
         /// 註冊 信道
         /// </summary>
+        /// <exception cref="throw"></exception>
         private void RegisterChannel()
         {
             BinaryServerFormatterSinkProvider serverProvider = new BinaryServerFormatterSinkProvider();
@@ -54,36 +55,14 @@ namespace AppModel
         }
 
         /// <summary>
-        /// SingleCall 方式註冊遠程對象 'Functions'
+        /// SingleCall 方式註冊遠程對象 'AppFunctions'
         /// </summary>
+        /// <exception cref="throw"></exception>
         private void RegisterFunctions()
         {
             try
             {
-                RemotingConfiguration.RegisterWellKnownServiceType(typeof(Functions), "Client.Functions", WellKnownObjectMode.SingleCall);
-            }
-            catch (Exception)
-            {
-                throw;
-            }
-        }
-
-        /// <summary>
-        /// set '_port' value from Config File
-        /// </summary>
-        private void SetPort()
-        {
-            XmlDocument xml = new XmlDocument();
-            try
-            {
-                xml.Load(this._configPath);
-                XmlNodeList nodes = xml.GetElementsByTagName("port");
-                string p = nodes[0].Attributes["number"].Value;
-                if (!RASecurity.IsChannelPort(p))
-                {
-                    throw new ArgumentException("Invalid Channel Port.");
-                }
-                this._port = p;
+                RemotingConfiguration.RegisterWellKnownServiceType(typeof(AppFunctions), "AppFunctions", WellKnownObjectMode.SingleCall);
             }
             catch (Exception)
             {
@@ -95,24 +74,19 @@ namespace AppModel
         /// <summary>
         /// 開始偵聽信道服務
         /// </summary>
-        /// <param name="configPath"></param>
-        public void OpenListening(string configPath)
+        /// <param name="port"></param>
+        /// <exception cref="throw"></exception>
+        public void OpenListening(string port)
         {       
             try
             {
-                if (configPath == null)
-                {
-                    RALogger.Error("Null ConfigFile Path.");
-                    return;
-                }
-                this._configPath = configPath;
-                this.SetPort();
+                this._port = port;
                 this.RegisterChannel();
                 this.RegisterFunctions();
             }
-            catch (Exception ex)
+            catch (Exception)
             {
-                RALogger.Error(ex.Message);
+                throw;
             }
         }
 

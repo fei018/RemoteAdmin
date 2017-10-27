@@ -41,12 +41,11 @@
   </ItemGroup>
   <ItemGroup>
     <Compile Include="HostInfo.cs" />
-    <Compile Include="RAConfigFile.cs" />
     <Compile Include="RAEventForwarder.cs" />
-    <Compile Include="IFunctions.cs" />
+    <Compile Include="IAppFunctions.cs" />
     <Compile Include="RALogger.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
-    <Compile Include="RASecurity.cs" />
+    <Compile Include="RAMatch.cs" />
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
   <!-- To modify your build process, add your task inside one of the targets below and uncomment it. 

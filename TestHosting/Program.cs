@@ -11,14 +11,37 @@ namespace TestHosting
     {
         static void Main(string[] args)
         {
-            string config = AppDomain.CurrentDomain.BaseDirectory + "\\app.config";
-            RAConfigFile path = new RAConfigFile(config);
-            ClientChannel client = new ClientChannel();
-            client.OpenListening(path.Path);
+            Program p = new Program();
+
+            p.OnStart();
+
             Console.WriteLine("start...");
-            
             Console.ReadLine();
-            client.CloseListening();
+
+            p.OnStop();
+        }
+
+        AppChannel _channel;
+        void OnStart()
+        {
+            try
+            {
+                AppConfig config = new AppConfig();
+                _channel = new AppChannel();
+                _channel.OpenListening(config.ChannelPort);
+            }
+            catch (Exception ex)
+            {
+                RALogger.Error(ex.Message);
+                _channel.CloseListening();
+                Console.WriteLine(ex.Message);
+            }
+        }
+
+
+        void OnStop()
+        {
+            _channel.CloseListening();
         }
     }
 }
