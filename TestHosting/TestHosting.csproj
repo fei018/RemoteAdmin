@@ -32,12 +32,12 @@
     <WarningLevel>4</WarningLevel>
   </PropertyGroup>
   <ItemGroup>
-    <Reference Include="AppModel">
-      <HintPath>..\AppModel\bin\Debug\AppModel.dll</HintPath>
-    </Reference>
     <Reference Include="Common, Version=1.0.0.0, Culture=neutral, processorArchitecture=MSIL">
       <SpecificVersion>False</SpecificVersion>
       <HintPath>..\Common\bin\Debug\Common.dll</HintPath>
+    </Reference>
+    <Reference Include="RAModel">
+      <HintPath>..\RAModel\bin\Debug\RAModel.dll</HintPath>
     </Reference>
     <Reference Include="System" />
     <Reference Include="System.Core" />
@@ -52,7 +52,7 @@
     <Compile Include="Properties\AssemblyInfo.cs" />
   </ItemGroup>
   <ItemGroup>
-    <None Include="Client.config">
+    <None Include="RAdmin.config">
       <CopyToOutputDirectory>Always</CopyToOutputDirectory>
       <SubType>Designer</SubType>
     </None>

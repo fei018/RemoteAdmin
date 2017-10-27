@@ -7,8 +7,8 @@
     <ProjectGuid>{82FB5E85-F429-4957-8637-562F9A973B58}</ProjectGuid>
     <OutputType>Library</OutputType>
     <AppDesignerFolder>Properties</AppDesignerFolder>
-    <RootNamespace>AppModel</RootNamespace>
-    <AssemblyName>AppModel</AssemblyName>
+    <RootNamespace>RAModel</RootNamespace>
+    <AssemblyName>RAModel</AssemblyName>
     <TargetFrameworkVersion>v4.0</TargetFrameworkVersion>
     <FileAlignment>512</FileAlignment>
   </PropertyGroup>
@@ -43,12 +43,12 @@
     <Reference Include="System.Xml" />
   </ItemGroup>
   <ItemGroup>
-    <Compile Include="AppConfig.cs" />
-    <Compile Include="AppChannel.cs" />
-    <Compile Include="AppCmd.cs" />
-    <Compile Include="AppFunctions.cs" />
+    <Compile Include="RAConfig.cs" />
+    <Compile Include="RAChannel.cs" />
+    <Compile Include="RACmd.cs" />
+    <Compile Include="RAFunctions.cs" />
     <Compile Include="LocalHost.cs" />
-    <Compile Include="AppPasswd.cs" />
+    <Compile Include="RAPasswd.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />

@@ -1,0 +1,14 @@
+D:\VisualStudioProject\Projects\RemoteAdmin\AppModel\bin\Debug\RAModel.dll
+D:\VisualStudioProject\Projects\RemoteAdmin\AppModel\bin\Debug\RAModel.pdb
+D:\VisualStudioProject\Projects\RemoteAdmin\AppModel\bin\Debug\Common.dll
+D:\VisualStudioProject\Projects\RemoteAdmin\AppModel\bin\Debug\Common.pdb
+D:\VisualStudioProject\Projects\RemoteAdmin\AppModel\obj\Debug\RAModel.csprojResolveAssemblyReference.cache
+D:\VisualStudioProject\Projects\RemoteAdmin\AppModel\obj\Debug\RAModel.dll
+D:\VisualStudioProject\Projects\RemoteAdmin\AppModel\obj\Debug\RAModel.pdb
+D:\VisualStudioProject\Projects\RemoteAdmin\RAModel\bin\Debug\RAModel.dll
+D:\VisualStudioProject\Projects\RemoteAdmin\RAModel\bin\Debug\RAModel.pdb
+D:\VisualStudioProject\Projects\RemoteAdmin\RAModel\bin\Debug\Common.dll
+D:\VisualStudioProject\Projects\RemoteAdmin\RAModel\bin\Debug\Common.pdb
+D:\VisualStudioProject\Projects\RemoteAdmin\RAModel\obj\Debug\RAModel.csprojResolveAssemblyReference.cache
+D:\VisualStudioProject\Projects\RemoteAdmin\RAModel\obj\Debug\RAModel.dll
+D:\VisualStudioProject\Projects\RemoteAdmin\RAModel\obj\Debug\RAModel.pdb

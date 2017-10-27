@@ -4,15 +4,15 @@ using System.Linq;
 using System.Security.Cryptography;
 using System.Text;
 
-namespace AppModel
+namespace RAModel
 {
-    public class AppPasswd
+    public class RAPasswd
     {
         //private string _password = "81DC9BDB52D04DC2036DBD8313ED055";
 
         public bool ToCheck(string password)
         {
-            AppConfig config = new AppConfig();         
+            RAConfig config = new RAConfig();         
             if (this.ToMD5(password) == config.Password) return true;
             return false;
         }

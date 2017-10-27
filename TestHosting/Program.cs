@@ -2,7 +2,7 @@
 using System.Collections.Generic;
 using System.Linq;
 using System.Text;
-using AppModel;
+using RAModel;
 using Common;
 
 namespace TestHosting
@@ -21,13 +21,13 @@ namespace TestHosting
             p.OnStop();
         }
 
-        AppChannel _channel;
+        RAChannel _channel;
         void OnStart()
         {
             try
             {
-                AppConfig config = new AppConfig();
-                _channel = new AppChannel();
+                RAConfig config = new RAConfig();
+                _channel = new RAChannel();
                 _channel.OpenListening(config.ChannelPort);
             }
             catch (Exception ex)

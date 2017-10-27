@@ -2,3 +2,6 @@ D:\VisualStudioProject\Projects\RemoteAdmin\ServerModel\bin\Debug\ServerModel.dl
 D:\VisualStudioProject\Projects\RemoteAdmin\ServerModel\bin\Debug\ServerModel.pdb
 D:\VisualStudioProject\Projects\RemoteAdmin\ServerModel\obj\Debug\ServerModel.dll
 D:\VisualStudioProject\Projects\RemoteAdmin\ServerModel\obj\Debug\ServerModel.pdb
+D:\VisualStudioProject\Projects\RemoteAdmin\ServerModel\obj\Debug\ServerModel.csprojResolveAssemblyReference.cache
+D:\VisualStudioProject\Projects\RemoteAdmin\ServerModel\bin\Debug\Common.dll
+D:\VisualStudioProject\Projects\RemoteAdmin\ServerModel\bin\Debug\Common.pdb

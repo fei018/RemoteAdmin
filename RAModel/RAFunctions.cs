@@ -5,9 +5,9 @@ using System.Text;
 using Common;
 using System.Threading;
 
-namespace AppModel
+namespace RAModel
 {
-    public class AppFunctions:MarshalByRefObject,IAppFunctions
+    public class RAFunctions:MarshalByRefObject,IRAFunctions
     {
         public event RAEventForwardDelegate CmdEventForward;
 
@@ -15,7 +15,7 @@ namespace AppModel
         {
             if (password == null) return false;
 
-            AppPasswd p = new AppPasswd();
+            RAPasswd p = new RAPasswd();
             if (p.ToCheck(password)) return true;
 
             return false;
@@ -35,7 +35,7 @@ namespace AppModel
             //        cmd.Run(command);
             //        cmd.OutputEvent -= cmd_OutputEvent;
             //    }))); 
-            AppCmd cmd = new AppCmd();
+            RACmd cmd = new RACmd();
             return cmd.Run(command);
         }
 

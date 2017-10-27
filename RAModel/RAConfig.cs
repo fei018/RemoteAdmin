@@ -6,20 +6,20 @@ using System.IO;
 using Common;
 using System.Xml;
 
-namespace AppModel
+namespace RAModel
 {
-    public class AppConfig
+    public class RAConfig
     {
         public static readonly object Locker1 = new object();
 
         /// <summary>
-        /// Client.config file Path
+        /// RAdmin.config file Path
         /// </summary>
         public string Path
         {
             get
             {
-                return AppDomain.CurrentDomain.BaseDirectory + "\\Client.config";
+                return AppDomain.CurrentDomain.BaseDirectory + "\\RAdmin.config";
             }
         }
 
@@ -30,7 +30,7 @@ namespace AppModel
                 XmlDocument xml = new XmlDocument();
                 try
                 {
-                    lock (AppConfig.Locker1)
+                    lock (RAConfig.Locker1)
                     {
                         xml.Load(this.Path);
                         XmlNodeList nodes = xml.GetElementsByTagName("channel");
@@ -57,7 +57,7 @@ namespace AppModel
                 XmlDocument xml = new XmlDocument();
                 try
                 {
-                    lock (AppConfig.Locker1)
+                    lock (RAConfig.Locker1)
                     {
                         xml.Load(this.Path);
                         XmlNodeList nodes = xml.GetElementsByTagName("secure");
@@ -79,7 +79,7 @@ namespace AppModel
                 {
                     if (value != null)
                     {
-                        lock (AppConfig.Locker1)
+                        lock (RAConfig.Locker1)
                         {
                             xml.Load(this.Path);
                             XmlNodeList nodes = xml.GetElementsByTagName("secure");
@@ -105,12 +105,12 @@ namespace AppModel
         /// 構造函數
         /// </summary>
         /// <param name="path"></param>
-        /// <exception cref="Client.config not exists."></exception>
-        public AppConfig()
+        /// <exception cref="RAdmin.config not exists."></exception>
+        public RAConfig()
         {
             if (!File.Exists(this.Path))
             {
-                throw new ArgumentException("Client.config not exists.");
+                throw new ArgumentException("RAdmin.config not exists.");
             }
         }
 

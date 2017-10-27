@@ -5,7 +5,7 @@ using System.Text;
 
 namespace Common
 { 
-    public interface IAppFunctions
+    public interface IRAFunctions
     {
         event RAEventForwardDelegate CmdEventForward;
 

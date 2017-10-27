@@ -5,9 +5,9 @@ using System.Text;
 using System.Diagnostics;
 using Common;
 
-namespace AppModel
+namespace RAModel
 {
-    public class AppCmd
+    public class RACmd
     {
         private Process _process;
         private ProcessStartInfo _startInfo;

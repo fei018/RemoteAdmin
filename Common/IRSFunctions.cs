@@ -2,12 +2,11 @@
 using System.Collections.Generic;
 using System.Linq;
 using System.Text;
-using Common;
 
-namespace AppModel
+namespace Common
 {
-    public class LocalHost
+    public interface IRSFunctions
     {
-
+        void UploadHostInfo(HostInfo host);
     }
 }

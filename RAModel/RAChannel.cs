@@ -9,14 +9,14 @@ using System.Collections;
 using Common;
 using System.Xml;
 
-namespace AppModel
+namespace RAModel
 {
     public delegate void AppExceptionDeleg(object sender, string e);
 
-    public class AppChannel
+    public class RAChannel
     {
         private string _port;
-
+        private string _portName;
         /// <summary>
         /// 註冊 信道
         /// </summary>
@@ -27,7 +27,7 @@ namespace AppModel
             serverProvider.TypeFilterLevel = System.Runtime.Serialization.Formatters.TypeFilterLevel.Full;
             BinaryClientFormatterSinkProvider clientProvider = new BinaryClientFormatterSinkProvider();
             IDictionary prop = new Hashtable();
-            prop["name"] = "AdminClientChannel" + _port;
+            prop["name"] = _portName;
             prop["port"] = _port;
             try
             {
@@ -46,7 +46,7 @@ namespace AppModel
         /// </summary>
         private void UnregisterChannel()
         {
-            TcpChannel channel = (TcpChannel)ChannelServices.GetChannel("AdminClientChannel" + _port);
+            TcpChannel channel = (TcpChannel)ChannelServices.GetChannel(_portName);
             if (channel != null)
             {
                 ChannelServices.UnregisterChannel(channel);
@@ -62,7 +62,7 @@ namespace AppModel
         {
             try
             {
-                RemotingConfiguration.RegisterWellKnownServiceType(typeof(AppFunctions), "AppFunctions", WellKnownObjectMode.SingleCall);
+                RemotingConfiguration.RegisterWellKnownServiceType(typeof(RAFunctions), "AppFunctions", WellKnownObjectMode.SingleCall);
             }
             catch (Exception)
             {
@@ -81,6 +81,7 @@ namespace AppModel
             try
             {
                 this._port = port;
+                this._portName = "RAdminChannel" + _port;
                 this.RegisterChannel();
                 this.RegisterFunctions();
             }
@@ -97,7 +98,6 @@ namespace AppModel
         {
             this.UnregisterChannel();
         }
-
         #endregion
     }
 }
