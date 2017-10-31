@@ -59,7 +59,7 @@ namespace ServerModel
         {
             try
             {
-               // RemotingConfiguration.RegisterWellKnownServiceType(typeof(RAFunctions), "AppFunctions", WellKnownObjectMode.SingleCall);
+                RemotingConfiguration.RegisterWellKnownServiceType(typeof(RSFunctions), "RServerFunctions", WellKnownObjectMode.SingleCall);
             }
             catch (Exception)
             {

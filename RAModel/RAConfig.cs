@@ -10,81 +10,93 @@ namespace RAModel
 {
     public class RAConfig
     {
-        public static readonly object Locker1 = new object();
+        /// <summary>
+        /// 構造函數
+        /// </summary>
+        /// <exception cref="RAdmin.cfg not exists."></exception>
+        public RAConfig()
+        {
+            if (!File.Exists(RAConfig.Path))
+            {
+                throw new ArgumentException("RAdmin.cfg not exists.");
+            }
+        }
+
+        private static readonly object _Locker1 = new object();
 
         /// <summary>
-        /// RAdmin.config file Path
+        /// RAdmin.cfg file Path
         /// </summary>
-        public string Path
+        public static string Path { get; set; }
+
+        /// <summary>
+        /// RAdmin Channel Port.
+        /// </summary>
+        /// <exception cref="Invalid raChannel Port."></exception>
+        public string RAChannel_port { get { return GetRAChannel_port(); } }
+        private string GetRAChannel_port()
         {
-            get
+            XmlDocument xml = new XmlDocument();
+            try
             {
-                return AppDomain.CurrentDomain.BaseDirectory + "\\RAdmin.config";
+                lock (RAConfig._Locker1)
+                {
+                    xml.Load(RAConfig.Path);
+                    XmlNodeList nodes = xml.GetElementsByTagName("raChannel");
+                    string port = nodes[0].Attributes["port"].Value;
+                    if (!RAMatch.IsChannelPort(port))
+                    {
+                        throw new ArgumentException("Invalid raChannel Port.");
+                    }
+                    xml = null;
+                    return port;
+                }
+            }
+            catch (Exception)
+            {
+                throw;
             }
         }
 
-        public string ChannelPort
+        public string Secure_passwd
         {
-            get
+            get { return GetSecure_passwd(); }
+            set { SetSecure_passwd(value); }
+        }
+        string GetSecure_passwd()
+        {
+            XmlDocument xml = new XmlDocument();
+            try
             {
-                XmlDocument xml = new XmlDocument();
-                try
+                lock (RAConfig._Locker1)
                 {
-                    lock (RAConfig.Locker1)
-                    {
-                        xml.Load(this.Path);
-                        XmlNodeList nodes = xml.GetElementsByTagName("channel");
-                        string port = nodes[0].Attributes["port"].Value;
-                        if (!RAMatch.IsChannelPort(port))
-                        {
-                            throw new ArgumentException("Invalid Channel Port.");
-                        }
-                        xml = null;
-                        return port;
-                    }
+                    xml.Load(RAConfig.Path);
+                    XmlNodeList nodes = xml.GetElementsByTagName("secure");
+                    string p = nodes[0].Attributes["passwd"].Value;
+                    xml = null;
+                    return p;
                 }
-                catch (Exception)
-                {
-                    throw;
-                }
+            }
+            catch (Exception ex)
+            {
+                xml = null;
+                RALogger.Error(ex.Message);
+                return null;
             }
         }
-
-        public string Password
+        void SetSecure_passwd(string passwd)
         {
-            get
-            {
-                XmlDocument xml = new XmlDocument();
+            XmlDocument xml = new XmlDocument();
                 try
                 {
-                    lock (RAConfig.Locker1)
+                    if (passwd != null)
                     {
-                        xml.Load(this.Path);
-                        XmlNodeList nodes = xml.GetElementsByTagName("secure");
-                        string p = nodes[0].Attributes["passwd"].Value;
-                        xml = null;
-                        return p;
-                    }
-                }
-                catch (Exception ex)
-                {
-                    RALogger.Error(ex.Message);
-                    return null;
-                }
-            }
-            set
-            {
-                XmlDocument xml = new XmlDocument();
-                try
-                {
-                    if (value != null)
-                    {
-                        lock (RAConfig.Locker1)
+                        lock (RAConfig._Locker1)
                         {
-                            xml.Load(this.Path);
+                            xml.Load(RAConfig.Path);
                             XmlNodeList nodes = xml.GetElementsByTagName("secure");
-                            nodes[0].Attributes["passwd"].Value = value;
-                            xml.Save(this.Path);
+                            nodes[0].Attributes["passwd"].Value = passwd;
+                            xml.Save(RAConfig.Path);
                             xml = null;
                         }
                     }
@@ -92,28 +104,91 @@ namespace RAModel
                 catch (Exception ex)
                 {
                     xml = null;
-                    RALogger.Error(ex.Message);                  
+                    RALogger.Error(ex.Message);
                 }
-            }
         }
-
-        public string UpdateServer;
-
-        public string HostsInfoServer;
 
         /// <summary>
-        /// 構造函數
+        /// RAdmin Server IP
         /// </summary>
-        /// <param name="path"></param>
-        /// <exception cref="RAdmin.config not exists."></exception>
-        public RAConfig()
+        /// <exception cref="Invalid RAServer IP."></exception>
+        public string RAServer_ip { get { return GetRAServer_ip(); } }
+        string GetRAServer_ip()
         {
-            if (!File.Exists(this.Path))
+            XmlDocument xml = new XmlDocument();
+            try
             {
-                throw new ArgumentException("RAdmin.config not exists.");
+                lock (RAConfig._Locker1)
+                {
+                    xml.Load(RAConfig.Path);
+                    XmlNodeList nodes = xml.GetElementsByTagName("raServer");
+                    string ip = nodes[0].Attributes["ip"].Value;
+                    if (!RAMatch.IsIPAddress(ip))
+                    {
+                        throw new ArgumentException("Invalid RAServer IP.");
+                    }
+                    xml = null;
+                    return ip;
+                }
+            }
+            catch (Exception)
+            {
+                throw;
             }
         }
 
+        /// <summary>
+        /// RAdmin Server Channel Port
+        /// </summary>
+        /// <exception cref="Invalid RAServer Port."></exception>
+        public string RAServer_port { get { return GetRAServer_port(); } }
+        string GetRAServer_port()
+        {
+            XmlDocument xml = new XmlDocument();
+            try
+            {
+                lock (RAConfig._Locker1)
+                {
+                    xml.Load(RAConfig.Path);
+                    XmlNodeList nodes = xml.GetElementsByTagName("raServer");
+                    string port = nodes[0].Attributes["port"].Value;
+                    if (!RAMatch.IsChannelPort(port))
+                    {
+                        throw new ArgumentException("Invalid RAServer Port.");
+                    }
+                    xml = null;
+                    return port;
+                }
+            }
+            catch (Exception)
+            {
+                throw;
+            }
+        }
 
+        public string UpdateServer_ip { get { return GetUpdateServer_ip(); } }
+        string GetUpdateServer_ip()
+        {
+            XmlDocument xml = new XmlDocument();
+            try
+            {
+                lock (RAConfig._Locker1)
+                {
+                    xml.Load(RAConfig.Path);
+                    XmlNodeList nodes = xml.GetElementsByTagName("updateServer");
+                    string ip = nodes[0].Attributes["ip"].Value;
+                    if (!RAMatch.IsIPAddress(ip))
+                    {
+                        throw new ArgumentException("Invalid UPdateServer ip.");
+                    }
+                    xml = null;
+                    return ip;
+                }
+            }
+            catch (Exception)
+            {
+                throw;
+            }
+        }
     }
 }

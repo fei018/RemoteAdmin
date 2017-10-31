@@ -30,9 +30,6 @@
     <WarningLevel>4</WarningLevel>
   </PropertyGroup>
   <ItemGroup>
-    <Reference Include="Common">
-      <HintPath>..\Common\bin\Debug\Common.dll</HintPath>
-    </Reference>
     <Reference Include="System" />
     <Reference Include="System.Core" />
     <Reference Include="System.Runtime.Remoting" />
@@ -47,9 +44,15 @@
     <Compile Include="RAChannel.cs" />
     <Compile Include="RACmd.cs" />
     <Compile Include="RAFunctions.cs" />
-    <Compile Include="LocalHost.cs" />
+    <Compile Include="HostHelper.cs" />
     <Compile Include="RAPasswd.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
+  </ItemGroup>
+  <ItemGroup>
+    <ProjectReference Include="..\Common\Common.csproj">
+      <Project>{e1c4c36f-fdb4-41c3-a2b5-e05c38b6eb6e}</Project>
+      <Name>Common</Name>
+    </ProjectReference>
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
   <!-- To modify your build process, add your task inside one of the targets below and uncomment it. 

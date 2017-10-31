@@ -22,18 +22,24 @@ namespace TestHosting
         }
 
         RAChannel _channel;
+        HostHelper _hostHelper;
         void OnStart()
         {
             try
             {
-                RAConfig config = new RAConfig();
+                RAConfig.Path = AppDomain.CurrentDomain.BaseDirectory + "\\RAdmin.cfg"; ;
+                RAConfig config = new RAConfig();               
                 _channel = new RAChannel();
-                _channel.OpenListening(config.ChannelPort);
+                _channel.OpenListening(config.RAChannel_port);
+
+                //_hostHelper = new HostHelper();
+                //_hostHelper.OnSchedule();
+                Test();
             }
             catch (Exception ex)
             {
                 RALogger.Error(ex.Message);
-                _channel.CloseListening();
+
                 Console.WriteLine(ex.Message);
             }
         }
@@ -41,7 +47,39 @@ namespace TestHosting
 
         void OnStop()
         {
-            _channel.CloseListening();
+            try
+            {
+                if (_channel != null)
+                {
+                    _channel.CloseListening();
+                }
+
+                if (_hostHelper != null)
+                {
+                    _hostHelper.StopSchedule();
+                }
+            }
+            catch (Exception ex)
+            {
+                Console.WriteLine(ex.Message);
+            }
+        }
+
+        void Test()
+        {
+            try
+            {
+                for (int i = 0; i < 1000; i++)
+                {
+                    HostHelper h = new HostHelper();
+                    HostInfo info = new HostInfo();
+                    h.Test(info, i.ToString());
+                }
+            }
+            catch (Exception ex)
+            {
+                Console.WriteLine(ex.Message);
+            }
         }
     }
 }

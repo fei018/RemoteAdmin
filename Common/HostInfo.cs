@@ -7,7 +7,8 @@ using System.Text;
 
 namespace Common
 {
-    public class HostInfo:MarshalByRefObject
+    [Serializable]
+    public class HostInfo
     {
         public string HostName { get; set; }
 
@@ -19,7 +20,7 @@ namespace Common
 
         public string UserName { get; set; }
 
-        public string SerialNumber { get; set; }
+        public string HostSerial { get; set; }
 
         public string SendTime { get; set; }
 
@@ -65,18 +66,21 @@ namespace Common
                 this.OSVersion = obj.Properties["Caption"].Value.ToString();
                 this.HostName = obj.Properties["CSName"].Value.ToString();
             }
+            OS.Dispose();
 
             ManagementClass CS = new ManagementClass("Win32_ComputerSystem");
             foreach (ManagementObject obj in CS.GetInstances())
             {
                 this.DomainName = obj.Properties["Domain"].Value.ToString();
             }
+            CS.Dispose();
 
             ManagementClass Bios = new ManagementClass("Win32_Bios");
             foreach (ManagementObject obj in Bios.GetInstances())
             {
-                this.SerialNumber = obj.Properties["SerialNumber"].Value.ToString();
+                this.HostSerial = obj.Properties["SerialNumber"].Value.ToString();
             }
+            Bios.Dispose();
 
             this.SendTime = DateTime.Now.ToString();
         }

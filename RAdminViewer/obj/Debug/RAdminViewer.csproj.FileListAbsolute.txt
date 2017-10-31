@@ -1,10 +1,10 @@
-D:\VisualStudioProject\Projects\RemoteAdmin\RAdminViewer\obj\Debug\RAdminConsole.exe
-D:\VisualStudioProject\Projects\RemoteAdmin\RAdminViewer\obj\Debug\RAdminConsole.pdb
-D:\VisualStudioProject\Projects\RemoteAdmin\RAdminViewer\bin\Debug\RAdminConsole.exe
-D:\VisualStudioProject\Projects\RemoteAdmin\RAdminViewer\bin\Debug\RAdminConsole.pdb
-D:\VisualStudioProject\Projects\RemoteAdmin\RAdminViewer\obj\Debug\RAdminConsole.Properties.Resources.resources
 D:\VisualStudioProject\Projects\RemoteAdmin\RAdminViewer\obj\Debug\RAdminViewer.csproj.GenerateResource.Cache
 D:\VisualStudioProject\Projects\RemoteAdmin\RAdminViewer\obj\Debug\RAdminViewer.ViewerForm.resources
 D:\VisualStudioProject\Projects\RemoteAdmin\RAdminViewer\bin\Debug\Common.dll
 D:\VisualStudioProject\Projects\RemoteAdmin\RAdminViewer\bin\Debug\Common.pdb
 D:\VisualStudioProject\Projects\RemoteAdmin\RAdminViewer\obj\Debug\RAdminViewer.csprojResolveAssemblyReference.cache
+D:\VisualStudioProject\Projects\RemoteAdmin\RAdminViewer\bin\Debug\RAdminViewer.exe
+D:\VisualStudioProject\Projects\RemoteAdmin\RAdminViewer\bin\Debug\RAdminViewer.pdb
+D:\VisualStudioProject\Projects\RemoteAdmin\RAdminViewer\obj\Debug\RAdminViewer.Properties.Resources.resources
+D:\VisualStudioProject\Projects\RemoteAdmin\RAdminViewer\obj\Debug\RAdminViewer.exe
+D:\VisualStudioProject\Projects\RemoteAdmin\RAdminViewer\obj\Debug\RAdminViewer.pdb

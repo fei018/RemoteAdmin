@@ -5,3 +5,5 @@ D:\VisualStudioProject\Projects\RemoteAdmin\ServerModel\obj\Debug\ServerModel.pd
 D:\VisualStudioProject\Projects\RemoteAdmin\ServerModel\obj\Debug\ServerModel.csprojResolveAssemblyReference.cache
 D:\VisualStudioProject\Projects\RemoteAdmin\ServerModel\bin\Debug\Common.dll
 D:\VisualStudioProject\Projects\RemoteAdmin\ServerModel\bin\Debug\Common.pdb
+D:\VisualStudioProject\Projects\RemoteAdmin\ServerModel\bin\Debug\MySql.Data.dll
+D:\VisualStudioProject\Projects\RemoteAdmin\ServerModel\bin\Debug\MySql.Data.xml

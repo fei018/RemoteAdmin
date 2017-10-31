@@ -9,7 +9,7 @@ namespace RAModel
 {
     public class RAFunctions:MarshalByRefObject,IRAFunctions
     {
-        public event RAEventForwardDelegate CmdEventForward;
+        //public event RAEventForwardDelegate RAEventForward;
 
         public bool PasswordCheck(string password)
         {

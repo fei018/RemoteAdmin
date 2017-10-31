@@ -55,14 +55,14 @@ namespace RAModel
         }
 
         /// <summary>
-        /// SingleCall 方式註冊遠程對象 'AppFunctions'
+        /// SingleCall 方式註冊遠程對象 'RAdminFunctions'
         /// </summary>
         /// <exception cref="throw"></exception>
         private void RegisterFunctions()
         {
             try
             {
-                RemotingConfiguration.RegisterWellKnownServiceType(typeof(RAFunctions), "AppFunctions", WellKnownObjectMode.SingleCall);
+                RemotingConfiguration.RegisterWellKnownServiceType(typeof(RAFunctions), "RAdminFunctions", WellKnownObjectMode.SingleCall);
             }
             catch (Exception)
             {

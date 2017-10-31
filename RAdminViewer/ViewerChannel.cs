@@ -27,7 +27,6 @@ namespace RAdminViewer
             {
                 TcpChannel channel = new TcpChannel(prop, clientProvider, serverProvider);
                 ChannelServices.RegisterChannel(channel, false);
-                //Logger.Log("Register Channel: " + _port + " port.");
             }
             catch (Exception)
             {
@@ -41,7 +40,6 @@ namespace RAdminViewer
             if (channel != null)
             {
                 ChannelServices.UnregisterChannel(channel);
-                //Logger.Log("Unregister Channel: " + _port + " port.");
             }
         }
 
@@ -49,7 +47,6 @@ namespace RAdminViewer
         {
             if (port == null)
             {
-                //Logger.Error("Null Port.");
                 MessageBox.Show("Null port");
                 return;
             }
@@ -62,7 +59,6 @@ namespace RAdminViewer
             }
             catch (Exception ex)
             {
-                //Logger.Error(ex.Message);
                 MessageBox.Show(ex.Message);
             }
         }

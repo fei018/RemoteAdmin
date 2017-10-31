@@ -13,7 +13,7 @@ namespace RAModel
         public bool ToCheck(string password)
         {
             RAConfig config = new RAConfig();         
-            if (this.ToMD5(password) == config.Password) return true;
+            if (this.ToMD5(password) == config.Secure_passwd) return true;
             return false;
         }
 

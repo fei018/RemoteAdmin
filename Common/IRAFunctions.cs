@@ -7,7 +7,7 @@ namespace Common
 { 
     public interface IRAFunctions
     {
-        event RAEventForwardDelegate CmdEventForward;
+        //event RAEventForwardDelegate RAEventForward;
 
         /// <summary>
         /// check connection password
