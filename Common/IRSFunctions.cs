@@ -7,6 +7,6 @@ namespace Common
 {
     public interface IRSFunctions
     {
-        void UpdateHostInfoToDB(HostInfo host);
+        void UploadHostInfoToDB(HostInfo host);
     }
 }

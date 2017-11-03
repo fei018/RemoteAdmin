@@ -8,7 +8,7 @@ using System.IO;
 
 namespace RAModel
 {
-    public class HostHelper
+    public class LocalHost
     {
         private string _raServerFunc_url
         {
@@ -26,12 +26,12 @@ namespace RAModel
             }
         }
 
-        private IRSFunctions _IRServerFuncObject;
+        private IRSFunctions _remoteServerFunctions;
         private void ActiveIRSFunctions()
         {
             try
             {
-                _IRServerFuncObject = (IRSFunctions)Activator.GetObject(typeof(IRSFunctions), this._raServerFunc_url);
+                _remoteServerFunctions = (IRSFunctions)Activator.GetObject(typeof(IRSFunctions), this._raServerFunc_url);
             }
             catch (Exception)
             {
@@ -39,13 +39,13 @@ namespace RAModel
             }
         }
 
-        private void UpdateHostInfo()
+        private void UploadHostInfo()
         {
             try
             {
                 HostInfo host = new HostInfo();
                 host.LoadInfo();
-                _IRServerFuncObject.UpdateHostInfoToDB(host);
+                _remoteServerFunctions.UploadHostInfoToDB(host);
             }
             catch (Exception ex)
             {
@@ -56,7 +56,7 @@ namespace RAModel
         {
             try
             {
-                this.UpdateHostInfo();
+                this.UploadHostInfo();
             }
             catch (Exception)
             {
@@ -66,10 +66,10 @@ namespace RAModel
 
         private Timer _timer;
         /// <summary>
-        /// On schedule for Update HostInfo to server.
+        /// On schedule for upload HostInfo to server.
         /// </summary>
         /// <exception cref="throw"></exception>       
-        public void OnSchedule()
+        public void OnScheduleUploadInfo()
         {
             try
             {
@@ -77,7 +77,7 @@ namespace RAModel
                 this._timer = new Timer(10000);
                 this._timer.Elapsed += timer_Elapsed;
                 this._timer.Start();
-                this.UpdateHostInfo();
+                this.UploadHostInfo();
             }
             catch (Exception)
             {
@@ -87,10 +87,10 @@ namespace RAModel
         }
 
         /// <summary>
-        /// Stop schedule of Update HostInfo to server.
+        /// Stop schedule of upload HostInfo to server.
         /// </summary>
         /// <exception cref="throw"></exception>
-        public void StopSchedule()
+        public void StopScheduleUploadInfo()
         {
             try
             {
@@ -114,7 +114,7 @@ namespace RAModel
                 this.ActiveIRSFunctions();
                 info.LoadInfo();
                 info.HostSerial = i;
-                this._IRServerFuncObject.UpdateHostInfoToDB(info);
+                this._remoteServerFunctions.UploadHostInfoToDB(info);
                 Console.WriteLine(i);
                 lock (lock1)
                 {

@@ -22,7 +22,7 @@ namespace TestHosting
         }
 
         RAChannel _channel;
-        HostHelper _hostHelper;
+        LocalHost _hostHelper;
         void OnStart()
         {
             try
@@ -38,7 +38,7 @@ namespace TestHosting
             }
             catch (Exception ex)
             {
-                RALogger.Error(ex.Message);
+                Logger.Error(ex.Message);
 
                 Console.WriteLine(ex.Message);
             }
@@ -56,7 +56,7 @@ namespace TestHosting
 
                 if (_hostHelper != null)
                 {
-                    _hostHelper.StopSchedule();
+                    _hostHelper.StopScheduleUploadInfo();
                 }
             }
             catch (Exception ex)
@@ -71,7 +71,7 @@ namespace TestHosting
             {
                 for (int i = 0; i < 1000; i++)
                 {
-                    HostHelper h = new HostHelper();
+                    LocalHost h = new LocalHost();
                     HostInfo info = new HostInfo();
                     h.Test(info, i.ToString());
                 }

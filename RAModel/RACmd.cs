@@ -50,7 +50,7 @@ namespace RAModel
                 }
                 catch (Exception ex)
                 {
-                    RALogger.Log(ex.Message);
+                    Logger.Log(ex.Message);
                     return ex.Message;
                 }
             }

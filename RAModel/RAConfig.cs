@@ -80,7 +80,7 @@ namespace RAModel
             catch (Exception ex)
             {
                 xml = null;
-                RALogger.Error(ex.Message);
+                Logger.Error(ex.Message);
                 return null;
             }
         }
@@ -104,7 +104,7 @@ namespace RAModel
                 catch (Exception ex)
                 {
                     xml = null;
-                    RALogger.Error(ex.Message);
+                    Logger.Error(ex.Message);
                 }
         }
 
@@ -166,6 +166,7 @@ namespace RAModel
             }
         }
 
+
         public string UpdateServer_ip { get { return GetUpdateServer_ip(); } }
         string GetUpdateServer_ip()
         {
@@ -179,7 +180,7 @@ namespace RAModel
                     string ip = nodes[0].Attributes["ip"].Value;
                     if (!RAMatch.IsIPAddress(ip))
                     {
-                        throw new ArgumentException("Invalid UPdateServer ip.");
+                        throw new ArgumentException("Invalid UpdateServer ip.");
                     }
                     xml = null;
                     return ip;
@@ -190,5 +191,11 @@ namespace RAModel
                 throw;
             }
         }
+
+        private void ConfigExceptionHandler()
+        {
+            //config 處理：copy 備份文件
+        }
     }
+     
 }

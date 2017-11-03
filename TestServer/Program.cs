@@ -25,15 +25,16 @@ namespace TestServer
         {
             try
             {
+                ServerConfig.Path = AppDomain.CurrentDomain.BaseDirectory + "\\Server.cfg";
                 ServerConfig config = new ServerConfig();
-                config.SetDBConnectString();
+                ServerConfig.DBConnectionString = config.GetDBConnectionString();
 
                 _channel = new ServerChannel();
                 _channel.OpenListening(config.ChannelPort);
             }
             catch (Exception ex)
             {
-                RALogger.Error(ex.Message);
+                Logger.Error(ex.Message);
                 Console.WriteLine(ex.Message);
             }
         }

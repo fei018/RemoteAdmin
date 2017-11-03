@@ -1,0 +1,13 @@
+D:\VisualStudioProject\Projects\RemoteAdmin\RemoteAdminApp\bin\Debug\RemoteAdmin.exe
+D:\VisualStudioProject\Projects\RemoteAdmin\RemoteAdminApp\bin\Debug\RemoteAdmin.pdb
+D:\VisualStudioProject\Projects\RemoteAdmin\RemoteAdminApp\obj\Debug\RemoteAdminApp.csprojResolveAssemblyReference.cache
+D:\VisualStudioProject\Projects\RemoteAdmin\RemoteAdminApp\obj\Debug\RemoteAdminApp.Properties.Resources.resources
+D:\VisualStudioProject\Projects\RemoteAdmin\RemoteAdminApp\obj\Debug\RemoteAdminApp.csproj.GenerateResource.Cache
+D:\VisualStudioProject\Projects\RemoteAdmin\RemoteAdminApp\obj\Debug\RemoteAdmin.exe
+D:\VisualStudioProject\Projects\RemoteAdmin\RemoteAdminApp\obj\Debug\RemoteAdmin.pdb
+D:\VisualStudioProject\Projects\RemoteAdmin\RemoteAdminApp\bin\Debug\Common.dll
+D:\VisualStudioProject\Projects\RemoteAdmin\RemoteAdminApp\bin\Debug\RAModel.dll
+D:\VisualStudioProject\Projects\RemoteAdmin\RemoteAdminApp\bin\Debug\Common.pdb
+D:\VisualStudioProject\Projects\RemoteAdmin\RemoteAdminApp\bin\Debug\RAModel.pdb
+D:\VisualStudioProject\Projects\RemoteAdmin\RemoteAdminApp\bin\Debug\RAdmin.cfg
+D:\VisualStudioProject\Projects\RemoteAdmin\RemoteAdminApp\obj\Debug\RemoteAdminApp.RAdminForm.resources

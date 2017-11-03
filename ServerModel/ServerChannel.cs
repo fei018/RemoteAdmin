@@ -30,7 +30,7 @@ namespace ServerModel
             {
                 TcpChannel channel = new TcpChannel(prop, clientProvider, serverProvider);
                 ChannelServices.RegisterChannel(channel, false);
-                RALogger.Log("Register Channel: " + _port + " port.");
+                Logger.Log("Register Channel: " + _port + " port.");
             }
             catch (Exception)
             {
@@ -47,7 +47,7 @@ namespace ServerModel
             if (channel != null)
             {
                 ChannelServices.UnregisterChannel(channel);
-                RALogger.Log("Unregister Channel: " + _port + " port.");
+                Logger.Log("Unregister Channel: " + _port + " port.");
             }
         }
 

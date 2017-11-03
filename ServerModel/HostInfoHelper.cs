@@ -19,7 +19,7 @@ namespace ServerModel
             return para;
         }
 
-        public void UpdateInfoToDB(HostInfo host)
+        public void UploadInfoToDB(HostInfo host)
         {
             string cmdString = @"insert into t_hostinfo (HostName,UserName,DomainName,IPAddress,HostSerial,OSVersion,SendTime) 
                                     values(@HostName,@UserName,@DomainName,@IPAddress,@HostSerial,@OSVersion,@SendTime) on duplicate key update 
@@ -37,7 +37,7 @@ namespace ServerModel
 
             try
             {
-                using (MySqlConnection conn = new MySqlConnection(ServerConfig.DBConnectString))
+                using (MySqlConnection conn = new MySqlConnection(ServerConfig.DBConnectionString))
                 {
                     conn.Open();
                     MySqlHelper.ExecuteNonQuery(conn, cmdString, paras);

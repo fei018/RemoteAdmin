@@ -54,7 +54,7 @@ namespace Common
             }
             catch (Exception ex)
             {
-                RALogger.Error(ex.Message);
+                Logger.Error(ex.Message);
                 this.IPAddress = string.Empty;
             }
 

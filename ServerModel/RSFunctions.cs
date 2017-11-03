@@ -8,11 +8,11 @@ namespace ServerModel
 {
     public class RSFunctions:MarshalByRefObject,IRSFunctions
     {
-        public void UpdateHostInfoToDB(HostInfo host)
+        public void UploadHostInfoToDB(HostInfo host)
         {
             Console.WriteLine(host.HostSerial);
             HostInfoHelper helper = new HostInfoHelper();
-            helper.UpdateInfoToDB(host);            
+            helper.UploadInfoToDB(host);            
         }
     }
 }

@@ -27,10 +27,7 @@ namespace ServerModel
         /// <summary>
         /// Server.cfg file Path
         /// </summary>
-        public static string Path
-        {
-            get { return AppDomain.CurrentDomain.BaseDirectory + "\\Server.cfg"; }
-        }
+        public static string Path { get; set; }
 
         public string ChannelPort
         {
@@ -59,14 +56,14 @@ namespace ServerModel
             }
         }
 
-        public static string DBConnectString;
+        public static string DBConnectionString;
 
         /// <summary>
         /// 
         /// </summary>
         /// <returns></returns>
         /// <exception cref="throw"></exception>
-        public void SetDBConnectString()
+        public string GetDBConnectionString()
         {
             XmlDocument xml = new XmlDocument();
             try
@@ -75,8 +72,9 @@ namespace ServerModel
                 {
                     xml.Load(ServerConfig.Path);
                     XmlNodeList nodes = xml.GetElementsByTagName("mysql");
-                    ServerConfig.DBConnectString = nodes[0].Attributes["connectionString"].Value;
+                    string con = nodes[0].Attributes["connectionString"].Value;
                     xml = null;
+                    return con;
                 }
             }
             catch (Exception)
