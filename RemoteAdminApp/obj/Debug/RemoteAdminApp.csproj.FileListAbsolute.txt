@@ -11,3 +11,4 @@ D:\VisualStudioProject\Projects\RemoteAdmin\RemoteAdminApp\bin\Debug\Common.pdb
 D:\VisualStudioProject\Projects\RemoteAdmin\RemoteAdminApp\bin\Debug\RAModel.pdb
 D:\VisualStudioProject\Projects\RemoteAdmin\RemoteAdminApp\bin\Debug\RAdmin.cfg
 D:\VisualStudioProject\Projects\RemoteAdmin\RemoteAdminApp\obj\Debug\RemoteAdminApp.RAdminForm.resources
+D:\VisualStudioProject\Projects\RemoteAdmin\RemoteAdminApp\obj\Debug\RemoteAdminApp.csproj.CoreCompileInputs.cache

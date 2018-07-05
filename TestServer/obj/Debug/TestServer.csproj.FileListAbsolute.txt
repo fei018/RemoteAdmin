@@ -10,3 +10,4 @@ D:\VisualStudioProject\Projects\RemoteAdmin\TestServer\bin\Debug\ServerModel.pdb
 D:\VisualStudioProject\Projects\RemoteAdmin\TestServer\bin\Debug\MySql.Data.dll
 D:\VisualStudioProject\Projects\RemoteAdmin\TestServer\bin\Debug\MySql.Data.xml
 D:\VisualStudioProject\Projects\RemoteAdmin\TestServer\bin\Debug\Server.cfg
+D:\VisualStudioProject\Projects\RemoteAdmin\TestServer\obj\Debug\TestServer.csproj.CoreCompileInputs.cache

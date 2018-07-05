@@ -8,3 +8,4 @@ D:\VisualStudioProject\Projects\RemoteAdmin\RAdminViewer\bin\Debug\RAdminViewer.
 D:\VisualStudioProject\Projects\RemoteAdmin\RAdminViewer\obj\Debug\RAdminViewer.Properties.Resources.resources
 D:\VisualStudioProject\Projects\RemoteAdmin\RAdminViewer\obj\Debug\RAdminViewer.exe
 D:\VisualStudioProject\Projects\RemoteAdmin\RAdminViewer\obj\Debug\RAdminViewer.pdb
+D:\VisualStudioProject\Projects\RemoteAdmin\RAdminViewer\obj\Debug\RAdminViewer.csproj.CoreCompileInputs.cache

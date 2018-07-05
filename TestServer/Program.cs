@@ -7,9 +7,9 @@ using Common;
 
 namespace TestServer
 {
-    class Program
+    internal class Program
     {
-        static void Main(string[] args)
+        private static void Main(string[] args)
         {
             Program p = new Program();
 
@@ -20,8 +20,9 @@ namespace TestServer
             p.OnStop();
         }
 
-        ServerChannel _channel;
-        void OnStart()
+        private ServerChannel _channel;
+
+        private void OnStart()
         {
             try
             {
@@ -39,7 +40,7 @@ namespace TestServer
             }
         }
 
-        void OnStop()
+        private void OnStop()
         {
             if (_channel != null)
             {

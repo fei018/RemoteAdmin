@@ -7,3 +7,4 @@ D:\VisualStudioProject\Projects\RemoteAdmin\ServerModel\bin\Debug\Common.dll
 D:\VisualStudioProject\Projects\RemoteAdmin\ServerModel\bin\Debug\Common.pdb
 D:\VisualStudioProject\Projects\RemoteAdmin\ServerModel\bin\Debug\MySql.Data.dll
 D:\VisualStudioProject\Projects\RemoteAdmin\ServerModel\bin\Debug\MySql.Data.xml
+D:\VisualStudioProject\Projects\RemoteAdmin\ServerModel\obj\Debug\ServerModel.csproj.CoreCompileInputs.cache

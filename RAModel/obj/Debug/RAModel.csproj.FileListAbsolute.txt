@@ -12,3 +12,4 @@ D:\VisualStudioProject\Projects\RemoteAdmin\RAModel\bin\Debug\Common.pdb
 D:\VisualStudioProject\Projects\RemoteAdmin\RAModel\obj\Debug\RAModel.csprojResolveAssemblyReference.cache
 D:\VisualStudioProject\Projects\RemoteAdmin\RAModel\obj\Debug\RAModel.dll
 D:\VisualStudioProject\Projects\RemoteAdmin\RAModel\obj\Debug\RAModel.pdb
+D:\VisualStudioProject\Projects\RemoteAdmin\RAModel\obj\Debug\RAModel.csproj.CoreCompileInputs.cache

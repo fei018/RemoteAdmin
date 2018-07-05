@@ -44,7 +44,7 @@
     <Compile Include="RAChannel.cs" />
     <Compile Include="RACmd.cs" />
     <Compile Include="RAFunctions.cs" />
-    <Compile Include="LocalHost.cs" />
+    <Compile Include="ClientHelper.cs" />
     <Compile Include="RAPasswd.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
   </ItemGroup>

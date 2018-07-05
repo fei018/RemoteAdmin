@@ -30,11 +30,11 @@ namespace RemoteAdminApp
             txtbHostInfo.AppendText("Domain Name: " + "\t" + h.DomainName + "\r\n");
             txtbHostInfo.AppendText("OS Version: " + "\t" + h.OSVersion + "\r\n");
             txtbHostInfo.AppendText("IP Address: " + "\t" + h.IPAddress + "\r\n");
-            txtbHostInfo.AppendText("Serial Number: " + "\t" + h.HostSerial + "\r\n");
+            txtbHostInfo.AppendText("Serial Number: " + "\t" + h.HostSerial);
         }
 
         RAChannel _channel;
-        LocalHost _localhost;
+        ClientHelper _localhost;
         void OnStart()
         {
             try
@@ -84,7 +84,7 @@ namespace RemoteAdminApp
             {
                 for (int i = 0; i < 1000; i++)
                 {
-                    LocalHost h = new LocalHost();
+                    ClientHelper h = new ClientHelper();
                     HostInfo info = new HostInfo();
                     h.Test(info, i.ToString());
                 }
