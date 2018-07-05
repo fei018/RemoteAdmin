@@ -1,5 +1,0 @@
-D:\VisualStudioProject\Projects\RemoteAdmin\Common\bin\Debug\Common.dll
-D:\VisualStudioProject\Projects\RemoteAdmin\Common\bin\Debug\Common.pdb
-D:\VisualStudioProject\Projects\RemoteAdmin\Common\obj\Debug\Common.dll
-D:\VisualStudioProject\Projects\RemoteAdmin\Common\obj\Debug\Common.pdb
-D:\VisualStudioProject\Projects\RemoteAdmin\Common\obj\Debug\Common.csproj.CoreCompileInputs.cache
